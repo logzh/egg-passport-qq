@@ -1,0 +1,31 @@
+# 依赖安装&代码检查
+install: &install
+  - name: 依赖安装 代码格式检查
+    script:
+      - node -v
+      - npm install --registry=http://r.tnpm.oa.com --proxy=http://r.tnpm.oa.com:80
+      - npm run lint
+      - npm run test
+
+master:
+  push:
+    - docker:
+        image: csighub.tencentyun.com/orange-ci/default-env
+      services:
+        - docker
+      envFrom: https://git.code.oa.com/spencezhang/orange-ci-keys/blob/master/envs
+      stages:
+        - *install       # 安装检查
+
+$:
+  tag_push:
+    - stages:
+      - name: tnpm publish
+        image: plugins/npm
+        envFrom: https://git.code.oa.com/spencezhang/orange-ci-keys/blob/master/envs
+        settings:
+          username: $NPM_USER
+          password: $NPM_PASS
+          email: $NPM_EMAIL
+          registry: http://r.tnpm.oa.com
+          folder: ./
