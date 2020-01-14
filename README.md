@@ -1,6 +1,6 @@
 # egg-passport-qq2
 
-## 开启插件
+## Usage
 
 ```js
 // {app_root}/config/plugin.js
@@ -10,7 +10,7 @@ exports.passportQQ = {
 };
 ```
 
-## 配置
+## Configuration
 
 ```js
 // {app_root}/config/config.default.js
@@ -25,10 +25,11 @@ module.exports = appInfo => {
   };
 };
 ```
+see [config/config.default.js](https://github.com/logzh/egg-passport-qq/blob/master/config/config.default.js) for more detail
 
-## 单元测试
+## Questions & Suggestions
 
-<!-- 描述如何在单元测试中使用此插件，例如 schedule 如何触发。无则省略。-->
+Please open an issue [here](https://github.com/logzh/egg-passport-qq/issues).
 
 ## License
 
