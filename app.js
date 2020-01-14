@@ -10,6 +10,7 @@ module.exports = app => {
   assert(config.secret, '[egg-passport-qq] config.passportQQ.secret required');
   config.clientID = config.key;
   config.clientSecret = config.secret;
+  config.photoField = config.photoField || 'figureurl_2';
   const client = 'qq';
 
   app.passport.use(client, new qqStrategy(config, (req, accessToken, refreshToken, profile, done) => {
@@ -28,7 +29,7 @@ module.exports = app => {
       provider: 'qq',
       id: profile.id,
       displayName: profile.nickname,
-      photo: profile._json.figureurl_2,
+      photo: profile._json[config.photoField],
       profile,
       accessToken,
       refreshToken,
