@@ -8,6 +8,9 @@ before_install:
   - npm i npminstall -g
 install:
   - npminstall
+env:
+  - EGG_PASSPORT_QQ_CLIENT_ID=123
+  - EGG_PASSPORT_QQ_CLIENT_SECRET=123
 script:
   - npm run ci
 after_script:
