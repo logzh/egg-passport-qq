@@ -1,5 +1,11 @@
 # egg-passport-qq2
 
+## Install
+
+```bash
+npm i egg-passport-qq2 --save
+```
+
 ## Usage
 
 ```js
