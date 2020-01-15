@@ -2,7 +2,7 @@ name: Node CI
 
 on:
   push:
-    branches:    
+    branches:
       - action
 
 jobs:
@@ -22,9 +22,8 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: npm install, build, and test
       run: |
-        npm i npminstall -g
-        npminstall
+        npm install
         npm run ci
-        npminstall codecov && codecov
+        npm install codecov && codecov
       env:
         CI: true
