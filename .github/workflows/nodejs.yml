@@ -1,9 +1,6 @@
-name: Node CI
+name: Node.js CI
 
-on:
-  push:
-    branches:    
-      - action
+on: [push]
 
 jobs:
   build:
@@ -15,16 +12,15 @@ jobs:
         node-version: [8.x, 10.x, 12.x]
 
     steps:
-    - uses: actions/checkout@v1
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - name: npm install, build, and test
-      run: |
-        npm i npminstall -g
-        npminstall
-        npm run ci
-        npminstall codecov && codecov
-      env:
-        CI: true
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm i npminstall -g
+      - run: npminstall
+      - run: npm run ci
+      - run: npminstall codecov && codecov
+      - run: npm test
+        env:
+          CI: true
