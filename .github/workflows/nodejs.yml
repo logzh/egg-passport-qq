@@ -17,10 +17,11 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm i npminstall -g
-      - run: npminstall
-      - run: npm run ci
-      - run: npminstall codecov && codecov
-      - run: npm test
+      - name: npm install, build, and test
+        run: |
+          npm i npminstall -g
+          npminstall
+          npm run ci
+          npminstall codecov && codecov
         env:
           CI: true
