@@ -41,7 +41,7 @@ jobs:
         with:
           node-version: 12
           registry-url: https://npm.pkg.github.com/
-          scope: '@your-github-username'
+          scope: '@logzh'
       - run: npm i npminstall -g
       - run: npminstall
       - run: npm run ci

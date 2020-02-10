@@ -1,6 +1,6 @@
 {
   "name": "egg-passport-qq2",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "qq passport plugin for egg",
   "eggPlugin": {
     "name": "passportQQ",
