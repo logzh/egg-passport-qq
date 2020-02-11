@@ -53,7 +53,7 @@
     "url": "https://github.com/logzh/egg-passport-qq/issues"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
+    "registry": "https://registry.npmjs.org"
   },
   "homepage": "https://github.com/logzh/egg-passport-qq#readme",
   "author": "spencezhang",
