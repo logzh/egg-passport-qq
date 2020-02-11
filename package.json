@@ -1,6 +1,6 @@
 {
   "name": "egg-passport-qq2",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "qq passport plugin for egg",
   "eggPlugin": {
     "name": "passportQQ",
@@ -51,9 +51,6 @@
   },
   "bugs": {
     "url": "https://github.com/logzh/egg-passport-qq/issues"
-  },
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org"
   },
   "homepage": "https://github.com/logzh/egg-passport-qq#readme",
   "author": "spencezhang",
